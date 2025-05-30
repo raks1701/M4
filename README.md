@@ -98,27 +98,28 @@ Write a C Program to convert the given string into lowercase.
 
 ## PROGRAM
 ```
-int main() {
-char str[100];
-fgets(str, sizeof(str), stdin);
-toLowerCase(str);
-printf("Lowercase string: %s\n", str);
-return 0;
+#include<stdio.h>
+#include<ctype.h>
+int main()
+{
+    char str[100];
+    scanf("%s",str);
+    for(int i=0;str[i] != '\0';i++)
+    {
+        str[i] = tolower(str[i]);
+    }
+    printf("Lower case String is:%s",str);
+    return 0;
 }
-int main() {
-char str[100];
-fgets(str, sizeof(str), stdin);
-toLowerCase(str);
-printf("Lowercase string: %s\n", str);
-return 0;
-}
+
 ```
 ## OUTPUT
 
+![m-3 (5)](https://github.com/user-attachments/assets/38f3393a-b9ba-41b6-97d1-531db27a12f0)
 
 
 
-![m=3](https://github.com/user-attachments/assets/53b5a77a-a70b-41fb-a98b-0209a0bac538)
+
 
 ## RESULT
 Thus the program to convert the given string into lowercase has been executed successfully
@@ -141,32 +142,31 @@ Write a C Program to count the total number of words in a given string using do 
 ## PROGRAM
 ```
 #include <stdio.h>
-#include <string.h>
 int main() {
-char str[100];
-int i = 0, wordCount = 0;
-fgets(str, sizeof(str), stdin);
-str[strcspn(str, "\n")] = '\0';
-while (str[i] == ' ') {
-i++;
-}
-do {
-if ((str[i] != ' ' && str[i] != '\0') &&
-(str[i + 1] == ' ' || str[i + 1] == '\0')) {
-wordCount++;
-}
-i++;
-} while (str[i] != '\0');
-printf("Total number of words: %d\n", wordCount);
-return 0;
+    char str[200];
+    int i = 0, count = 1;
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+   
+    do {
+        if (str[i] == ' ' && str[i + 1] != ' ' && str[i + 1] != '\0') {
+            count++;
+        }
+        i++;
+    } while (str[i] != '\0');
+
+    printf("Total number of words: %d\n", count);
+
+    return 0;
 }
 ```
 ## OUTPUT
 
+![m-4 (5)](https://github.com/user-attachments/assets/ff7821f2-af83-4436-b7bf-85d0d627547f)
 
 
 
-![m=4](https://github.com/user-attachments/assets/f7271b7e-ca67-4126-b008-1fd6bf434e31)
+
 
 ## RESULT
 Thus the program to count the total number of words in a given string using do While loop has been executed successfully
@@ -196,35 +196,31 @@ Step 8: End the program.
 
 ## PROGRAM
 ```
-#include <stdio.h>
-int main() {
-char c1[100], c2[100];
-int i = 0, flag = 0;
-scanf("%[^\n]", c1);
-getchar();
-scanf("%s", c2);
-while (c1[i] != '\0' && c2[i] != '\0') {
-if (c1[i] != c2[i]) {
-flag = 1;
-break;
-}
-i++;
-}
-if (c1[i] != c2[i]) {
-flag = 1;
-}
-if (flag == 0) {
-printf("Strings are same.\n");
-} else {
-printf("Strings are not same.\n");
-}
-return 0;
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[10];
+    char srt[10];
+    scanf("%s",str);
+    scanf("%s",srt);
+    int s = strcmp(str,srt);
+    if(s==0)
+    {
+        printf("strings are same");
+    }
+    else
+    {
+        printf("strings are not same");
+    }
+    return 0;
 }
 ```
 
 ## OUTPUT
 
- ![m=5](https://github.com/user-attachments/assets/488cfd8b-6af1-4157-8a60-af8e0d92ff9a)
+ ![m-5 (8)](https://github.com/user-attachments/assets/0746ea73-15cf-46d4-ab27-eadd5752986d)
+
 
 ## RESULT
 Thus the C Program to compare two strings without using strcmp() has been executed successfully.
