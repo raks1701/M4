@@ -196,30 +196,38 @@ Step 8: End the program.
 
 ## PROGRAM
 ```
-#include<stdio.h>
-#include<string.h>
-int main()
-{
-    char str[10];
-    char srt[10];
-    scanf("%s",str);
-    scanf("%s",srt);
-    int s = strcmp(str,srt);
-    if(s==0)
-    {
-        printf("strings are same");
+#include <stdio.h>
+
+int main() {
+    char c1[100], c2[100];
+    int i = 0, flag = 0;
+
+    scanf(" %[^\n]", c1);
+    
+    scanf(" %[^\n]", c2);
+
+    while (c1[i] != '\0' && c2[i] != '\0') {
+        if (c1[i] != c2[i]) {
+            flag = 1;
+            break;
+        }
+        i++;
     }
+    if (c1[i] != c2[i]) flag = 1;
+
+    if (flag == 0)
+        printf("strings are same\n");
     else
-    {
-        printf("strings are not same");
-    }
+        printf("strings are not same\n");
+
     return 0;
 }
 ```
 
 ## OUTPUT
 
- ![m-5 (8)](https://github.com/user-attachments/assets/0746ea73-15cf-46d4-ab27-eadd5752986d)
+ 
+![Screenshot 2025-05-31 133817](https://github.com/user-attachments/assets/c6050482-07aa-42fa-81fa-8ce2dee83414)
 
 
 ## RESULT
